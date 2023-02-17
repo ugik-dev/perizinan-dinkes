@@ -1,0 +1,24 @@
+# /assets/*
+/upload/profile/*
+!/upload/profile/profile_small.jpg
+/upload/qrcode/*
+!/upload/qrcode/stay.txt
+/upload/swa_foto/*
+!/upload/swa_foto/stay.txt
+/upload/ktp/*
+!/upload/ktp/stay.txt
+/upload/pembahasan_img/*
+!/upload/pembahasan_img/stay.txt
+/upload/image/*
+!/upload/image/stay.txt
+/upload/sk/*
+/uploads/sk/*
+/uploads/bukti/*
+/uploads/proposal/*
+/uploads/berkas/*
+/uploads/laporan_kemajuan/*
+/uploads/laporan_akhir/*
+/uploads/luaran/*
+/application/vendor
+/application/composer.lock
+/application/config/database.php

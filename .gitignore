@@ -1,4 +1,5 @@
 # /assets/*
+/application/cache/*
 /upload/profile/*
 !/upload/profile/profile_small.jpg
 /upload/qrcode/*

@@ -181,13 +181,34 @@
 
 
 
-        function span_approval(data) {
-            if (data == 'W') {
-                return '<i class="fa fa-check text-primary"> Sedang dalam Ujian </i>'
-            } else if (data == 'Y') {
-                return '<i class="fa fa-check text-success"> Lulus </i>'
+        function span_approval(data, unapv) {
+            console.log(unapv);
+            if (unapv == '' || unapv == null) {
+                if (data == '1') {
+                    return '<i class="fa fa-check text-primary"> Menunggu Persetujuan Seksi </i>'
+                } else if (data == '2') {
+                    return '<i class="fa fa-check text-primary"> Menunggu Persetujuan Kabid </i>'
+                } else if (data == '3') {
+                    return '<i class="fa fa-check text-primary"> Menunggu Persetujuan Sekretaris</i>'
+                } else if (data == '4') {
+                    return '<i class="fa fa-check text-primary"> Menunggu Persetujuan Kepala Dinas </i>'
+                } else if (data == '5') {
+                    return '<i class="fa fa-check text-success">  Selesai </i>'
+                } else {
+                    return '<i class="fa fa-times text-danger"> - </i>'
+                }
             } else {
-                return '<i class="fa fa-times text-danger"> Tidak Lulus </i>'
+                if (data == '1') {
+                    return '<i class="fa fa-times text-danger"> Ditolak Seksi </i>'
+                } else if (data == '2') {
+                    return '<i class="fa fa-times text-danger"> Ditolak Kabid </i>'
+                } else if (data == '3') {
+                    return '<i class="fa fa-times text-danger"> Ditolak Sekretaris</i>'
+                } else if (data == '4') {
+                    return '<i class="fa fa-times text-danger"> Ditolak Kepala Dinas </i>'
+                } else {
+                    return '<i class="fa fa-times text-danger"> - </i>'
+                }
             }
         }
 
@@ -225,7 +246,7 @@
                 } else {
                     button = ``;
                 }
-                renderData.push([exam['start_time'], exam['nama_perizinan'], span_status(exam['hasil']), exam['score'], exam['hasil'] == 'Y' ? span_approval(exam['hasil']) : '-', button]);
+                renderData.push([exam['start_time'], exam['nama_perizinan'], span_status(exam['hasil']), exam['score'], exam['hasil'] == 'Y' ? span_approval(exam['status_approval']) : '-', button]);
             });
             FDataTable.clear().rows.add(renderData).draw('full-hold');
         }

@@ -160,7 +160,7 @@
                         // delete dataAvaliabeExam[id];
                         swal("Berhasil", "", "success");
                         // location.reload();
-                        // window.location.href = '<?= base_url() ?>my-task/' + json['data'];
+                        window.location.href = '<?= base_url() ?>pendaftar/ujian/' + json['data'];
                         // renderAvaliabeExam(dataAvaliabeExam);
                     },
                     error: function(e) {}

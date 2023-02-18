@@ -20,6 +20,6 @@
 /uploads/laporan_kemajuan/*
 /uploads/laporan_akhir/*
 /uploads/luaran/*
-/application/vendor
-/application/composer.lock
+# /application/vendor
+# /application/composer.lock
 /application/config/database.php

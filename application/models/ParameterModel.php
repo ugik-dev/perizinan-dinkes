@@ -285,7 +285,7 @@ class ParameterModel extends CI_Model
 		$this->db->select("u.*, k.hasil, k.score, k.token");
 		$this->db->from('ref_perizinan as u');
 		// $this->db->join('role as r', 'r.id_role = u.id_role');
-		$this->db->join('session_exam_user as k', 'k.id_perizinan = u.id_perizinan AND (hasil = "Y" OR hasil = "W")', 'left');
+		$this->db->join('session_exam_user as k', "k.id_perizinan = u.id_perizinan AND (hasil = 'Y' OR hasil = 'W') AND id_user = {$this->session->userdata('id_user')}", 'left');
 		$this->db->where('u.status', 1);
 		if (!empty($filter['id_perizinan'])) $this->db->where('u.id_perizinan', $filter['id_perizinan']);
 		$res = $this->db->get();

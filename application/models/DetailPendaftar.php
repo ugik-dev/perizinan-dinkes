@@ -75,24 +75,11 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Nama Sekolah Asal</label>
-                        <input type="text" value="<?= !empty($ret_data['nama_sekolah']) ? $ret_data['nama_sekolah'] : '' ?>" class="form-control" id="nama_sekolah" name="nama_sekolah" required="required" autocomplete="username">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Nomor Ijazah</label>
-                        <input type="text" value="<?= !empty($ret_data['nomor_ijazah']) ? $ret_data['nomor_ijazah'] : '' ?>" class="form-control" id="nomor_ijazah" name="nomor_ijazah" required="required" autocomplete="username">
-                    </div>
-                </div>
-            </div>
+
 
 
             <div class="form-group">
-                <label>Alamat Sekolah Asal</label>
+                <label>Alamat</label>
                 <textarea rows="4" type="text" class="form-control" id="alamat" name="alamat" required="required"><?= !empty($ret_data['alamat']) ? $ret_data['alamat'] : '' ?></textarea>
             </div>
             <hr>

@@ -79,10 +79,15 @@ class PublicController extends CI_Controller
       $this->load->model(array('UserModel'));
 
       $data = $this->UserModel->activatorUser($data);
-      // $this->email_send($data, 'activate');
+      // $this->session->set_flashdata('error_activated', ['message' => "Kesalahan internal server. Kode: "]);
+      $this->session->set_flashdata('success_activated', 'Aktifasi Akun Berhasil');
       redirect('login');
     } catch (Exception $e) {
-      ExceptionHandler::handle($e);
+      if ($e instanceof UserException) {
+        $this->session->set_flashdata('error_activated', ['message' => $e->getMessage()]);
+      } else {
+        $this->session->set_flashdata('error_activated', ['message' => "Kesalahan internal server. Kode: " . $e->getCode()]);
+      }
     }
   }
   public function test_email()

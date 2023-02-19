@@ -2,19 +2,20 @@
     <div class="ibox-content loginForm" style="background-color:#ffffff61">
         <form id="preForm" class="m-t" role="form">
             <?php
-            if (empty($ret_data['id_data'])) {
-                echo '<div class="alert alert-secondary">Belum input data</div>';
-            } else {
-                if ($ret_data['status_data'] == 0) {
-                    echo '<div class="alert alert-secondary">Belum input data</div>';
-                } else if ($ret_data['status_data'] == 1) {
-                    echo '<div class="alert alert-primary">Menunggu Verifikasi</div>';
-                } else if ($ret_data['status_data'] == 2) {
-                    echo '<div class="alert alert-success">Diverifikasi</div>';
-                } else if ($ret_data['status_data'] == 3) {
-                    echo '<div class="alert alert-danger">Ditolak</div>';
-                }
-            }
+            // if (empty($ret_data['id_data'])) {
+            //     echo '<div class="alert alert-secondary">Belum input data</div>';
+            // } else {
+            //     if ($ret_data['status_data'] == 0) {
+            //         echo '<div class="alert alert-secondary">Belum input data</div>';
+            //     } else if ($ret_data['status_data'] == 1) {
+            //         echo '<div class="alert alert-primary">Menunggu Verifikasi</div>';
+            //     } else if ($ret_data['status_data'] == 2) {
+            //         echo '<div class="alert alert-success">Diverifikasi</div>';
+            //     } else if ($ret_data['status_data'] == 3) {
+            //         echo '<div class="alert alert-danger">Ditolak</div>';
+            //     }
+            // }
+            // 
             ?>
             <!-- <div class="alert alert-danger"><i class='fa fa-pencil-square-o '></i>Sudah dimulai</div> -->
             <div class="row">
@@ -23,7 +24,6 @@
                         <label>Nama</label>
                         <input type="text" value="<?= $this->session->userdata('nama') ?>" class="form-control" disabled="disabled" autocomplete="username">
                     </div>
-
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
@@ -46,21 +46,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Nama Sekolah Asal</label>
-                        <input type="text" value="<?= !empty($ret_data['nama_sekolah']) ? $ret_data['nama_sekolah'] : '' ?>" class="form-control" id="nama_sekolah" name="nama_sekolah" required="required" autocomplete="username">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Nomor Ijazah</label>
-                        <input type="text" value="<?= !empty($ret_data['nomor_ijazah']) ? $ret_data['nomor_ijazah'] : '' ?>" class="form-control" id="nomor_ijazah" name="nomor_ijazah" required="required" autocomplete="username">
-                    </div>
-                </div>
-            </div> -->
-
 
             <div class="form-group">
                 <label>Alamat</label>

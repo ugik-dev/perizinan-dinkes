@@ -16,21 +16,34 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="ibox-content loginForm" style="background-color:#ffffff61">
+            <div class="col-sm-12 col-md-12 col-lg-6">
+                <div class="ibox-content loginForm" style="background-color:#ffffff91">
                     <form id="registerForm" class="m-t" role="form">
-                        <h3 style="color: black;">Registrasi / Daftar</h3>
+                        <h2 style="color: black;">Registrasi </h2>
+                        <hr>
                         <div class="form-group">
+                            <h4 for="username" style="color: black;">NIK</h4>
                             <input type="text" placeholder="NIK" class="form-control" id="username" name="username" required="required" autocomplete="username">
+                        </div>
+                        <div class="form-group">
+                            <h4 for="nama" style="color: black;">Nama</h4>
+                            <input type="text" placeholder="Nama" class="form-control" id="nama" name="nama" required="required">
+                        </div>
+                        <!-- <div class="col-md-12"> -->
+                        <div class="form-group">
+                            <h4 for="alamat" style="color: black;">Alamat</h4>
+                            <textarea type="text" placeholder="Alamat" class="form-control" id="alamat" name="alamat" required="required" rows="3"></textarea>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <h4 for="password" style="color: black;">Password</h4>
                                     <input type="password" placeholder="Password" class="form-control" id="password" name="password" autocomplete="new-password" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <h4 for="repassword" style="color: black;">Ulangi Password</h4>
                                     <input type="password" placeholder="Password" class="form-control" id="repassword" name="repassword" autocomplete="new-password" required>
                                 </div>
                             </div>
@@ -38,35 +51,32 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <h4 for="email" style="color: black;">Email</h4>
                                     <input type="email" placeholder="Email" class="form-control" id="email" name="email" required="required">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-
+                                    <h4 for="phone" style="color: black;">No Telpon</h4>
                                     <input type="text" placeholder="No Telepon" class="form-control" id="phone" name="phone" required="required">
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="form-group">
-                            <input type="text" placeholder="Nama" class="form-control" id="nama" name="nama" required="required">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <h4 for="tempat_lahir" style="color: black;">Tempat Lahir</h4>
+                                    <input type="text" placeholder="Tempat Lahir" class="form-control" id="tempat_lahir" name="tempat_lahir" required="required">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <h4 for="tanggal_lahir" style="color: black;">Tanggal Lahir</h4>
+                                    <input type="date" placeholder="Tanggal Lahir" class="form-control" id="tanggal_lahir" name="tanggal_lahir" required="required">
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- <div class="form-group">
-                            <input type="text" placeholder="Asal Sekolah" class="form-control" id="asal_sekolah" name="asal_sekolah" required="required">
-                        </div>
-
-                        <div class="form-group">
-                            <input type="text" placeholder="Nomor Ijazah SMA" class="form-control" id="no_ijazah_sma" name="no_ijazah_sma" required="required">
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <textarea rows="4" type="text" placeholder="Alamat" class="form-control" id="alamat" name="alamat" required="required"></textarea>
-                        </div> -->
 
                         <button type="submit" id="registerBtn" class="btn btn-primary block full-width m-b" data-loading-text="Registering In...">
                             Register</button>

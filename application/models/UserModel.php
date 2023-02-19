@@ -91,7 +91,7 @@ class UserModel extends CI_Model
 		$this->db->insert('user_temp', DataStructure::slice(
 			$data,
 			[
-				'username', 'nama', 'password', 'password_hash', 'activator', 'email', 'alamat', 'phone'
+				'username', 'nama', 'password', 'password_hash', 'activator', 'email', 'alamat', 'phone', 'tempat_lahir', 'tanggal_lahir'
 			],
 			TRUE
 		));
@@ -133,26 +133,41 @@ class UserModel extends CI_Model
 		if (empty($res)) {
 			throw new UserException('Activation failed or has active please check your email or try to login', USER_NOT_FOUND_CODE);
 		} else {
+			$res = $res[0];
 			// $this->cekUserByEmailBuyer($res[0]);
-			$this->cekUserByEmail($res[0]);
-			$this->cekUserByUsername($res[0]['username']);
+			$this->cekUserByEmail($res);
+			$this->cekUserByUsername($res['username']);
 
-			$res[0]['id_role'] = '4';
-			// $res[0]['email'] = '4';
-			$res[0]['password'] = $res[0]['password_hash'];
-			$res[0]['hash_pwd'] = $res[0]['password_hash'];
-			$res[0]['id_user'] = $this->addUser($res[0]);
+			$res['id_role'] = '4';
+			// $res['email'] = '4';
+			$res['password'] = $res['password_hash'];
+			$res['hash_pwd'] = $res['password_hash'];
+
+			$dataPendaftar = [
+				'nomor_ktp' => $res['username'],
+				'tempat_lahir' => $res['tempat_lahir'],
+				'tanggal_lahir' => $res['tanggal_lahir'],
+				'alamat' => $res['alamat'],
+			];
+			$this->db->insert('data_pendaftar', $dataPendaftar);
+			ExceptionHandler::handleDBError($this->db->error(), "", "data_pendaftar");
+			$id_pendaftar = $this->db->insert_id();
+			$res['id_data'] = $id_pendaftar;
+
+			$res['id_user'] = $this->addUser($res);
 			//	$this->addPerusahaan($res[0]);
 			// $this->db->where('id', $res[0]['id']);
 			// $this->db->delete('user_temp');
-			return $res[0];
+			// $data['password'] =  md5($data['password']);
+
+			// return $res[0];
 		};
 	}
 
 	public function addUser($data)
 	{
 		$data['password'] =  md5($data['password']);
-		$dataInsert = DataStructure::slice($data, ['password', 'username', 'nama', 'id_role', 'email', 'hash_pwd', 'alamat', 'phone']);
+		$dataInsert = DataStructure::slice($data, ['password', 'username', 'nama', 'id_data', 'id_role', 'email', 'hash_pwd', 'alamat', 'phone']);
 		$this->db->insert('user', $dataInsert);
 		ExceptionHandler::handleDBError($this->db->error(), "Insert Kelolahuser", "user");
 		return $this->db->insert_id();

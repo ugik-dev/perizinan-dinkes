@@ -41,7 +41,7 @@ class PendaftarModel extends CI_Model
         $dataInsert = DataStructure::slice(
             $data,
             [
-                'no_ktp', 'file_ktp', 'swa_foto', 'tempat_lahir', 'nama_sekolah', 'nomor_ijazah', 'alamat', 'nomor_ktp', 'tanggal_lahir', 'status_data',
+                'no_ktp', 'file_ktp', 'swa_foto', 'tempat_lahir', 'alamat', 'nomor_ktp', 'tanggal_lahir', 'status_data',
                 'file_ijazah'
             ]
         );
@@ -60,7 +60,7 @@ class PendaftarModel extends CI_Model
         $this->db->set(DataStructure::slice(
             $data,
             [
-                'no_ktp', 'file_ktp', 'swa_foto', 'tempat_lahir', 'nama_sekolah', 'nomor_ijazah', 'alamat', 'nomor_ktp', 'tanggal_lahir', 'status_data',
+                'no_ktp', 'file_ktp', 'swa_foto', 'tempat_lahir',  'alamat', 'nomor_ktp', 'tanggal_lahir', 'status_data',
                 'file_ijazah'
             ]
         ));

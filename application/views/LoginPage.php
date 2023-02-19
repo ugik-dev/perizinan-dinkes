@@ -11,7 +11,7 @@
           <div class="col-md-3">
             <img class="ulogo" src="<?= base_url('assets/img/kab_bangka.png'); ?>" style="width : 100%; height: auto">
           </div>
-          <div class="col-md-9 ulayout">
+          <div class="col-sm-12 col-md-9 ulayout">
             <h2 class="display-5 shadowed mb-0 mt-0" style="color : #004d99">Sistem Pendaftaran & Ujian Peizinan</h2>
             <!-- <h1 class="display-4 shadowed mb-0" style="color : #004d99">Perizinan</h1> -->
             <p class="display-4 lead shadowed mb-0 mt-0" style="color:#bfbfbf">Dinas Kesehatan</p>
@@ -19,7 +19,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-sm-12 col-md-4">
         <div class="ibox-content loginForm" style="background-color:#ffffff61">
           <form id="loginForm" class="m-t" role="form">
             <h3 style="color: black;">Login / Masuk</h3>
@@ -74,6 +74,13 @@
         }
       });
     });
+    <?php
+    if (!empty($this->session->flashdata('success_activated'))) {
+      echo  'swal("Aktfasi Berhasil", "Silahkan login!" , "success");';
+    }
+    if (!empty($this->session->flashdata('error_activated'))) {
+      echo  'swal("Aktfasi Gagal", "' . $this->session->flashdata('error_activated')['message'] . '" , "error");';
+    } ?>
 
     var counter = Math.floor(Math.random() * 100) + 1;
     var image_count = 2;

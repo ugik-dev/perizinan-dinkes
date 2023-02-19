@@ -60,13 +60,13 @@
                     <input type="hidden" id="id_bank_soal" name="id_bank_soal">
 
                     <div class="form-group">
-                        <label for="nama">Mata Pelajaran</label>
+                        <label for="nama">Perizinan</label>
                         <select class="form-control mr-sm-2" name="id_perizinan" id="id_perizinan">
-                            <option value="6">Matematika</option>
-                            <option value="5">Fisika</option>
-                            <option value="2">Bahasa Indonesia</option>
-                            <option value="3">Bahasa Inggris</option>
-                        </select>
+                            <?php
+                            foreach ($dataContent['ref_perizinan'] as $m) {
+                                echo "<option value='{$m['id_perizinan']}'>{$m['nama_perizinan']}</option>";
+                            }
+                            ?> </select>
                     </div>
                     <div class="form-group">
                         <label for="nama">Soal</label>
@@ -281,6 +281,7 @@
                 error: function(e) {}
             });
         }
+
 
 
         // function renderMapel(data) {

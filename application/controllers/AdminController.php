@@ -351,18 +351,6 @@ class AdminController extends CI_Controller
     );
     $this->load->view('Page', $pageData);
   }
-  // public function statistikCagarbudaya(){
-  //   $this->SecurityModel->roleOnlyGuard('admin');
-  //   $pageData = array(
-  //     'title' => 'Statistik Cagar Budaya',
-  //     'content' => 'admin/StatistikCagarbudaya',
-  //     'breadcrumb' => array(
-  //       'Home' => base_url(),
-  //     ),
-  //   );
-  //   $this->load->view('Page', $pageData);
-  // }
-
 
   public function getAllBankSoal()
   {
@@ -645,12 +633,12 @@ class AdminController extends CI_Controller
     $this->load->view('Page', $pageData);
   }
 
-  public function Penginapan()
+  public function ref_peraturan()
   {
     $this->SecurityModel->roleOnlyGuard('admin');
     $pageData = array(
-      'title' => 'Penginapan',
-      'content' => 'admin/Penginapan',
+      'title' => 'Master Data > Peraturan',
+      'content' => 'admin/ref_peraturan',
       'breadcrumb' => array(
         'Home' => base_url(),
       ),
@@ -658,12 +646,24 @@ class AdminController extends CI_Controller
     $this->load->view('Page', $pageData);
   }
 
-  public function Biro()
+  public function ref_sktim()
   {
     $this->SecurityModel->roleOnlyGuard('admin');
     $pageData = array(
-      'title' => 'Biro Wisata dan Agen',
-      'content' => 'admin/Biro',
+      'title' => 'Master Data > SK Tim',
+      'content' => 'admin/ref_sktim',
+      'breadcrumb' => array(
+        'Home' => base_url(),
+      ),
+    );
+    $this->load->view('Page', $pageData);
+  }
+  public function ref_jenis_ujian()
+  {
+    $this->SecurityModel->roleOnlyGuard('admin');
+    $pageData = array(
+      'title' => 'Master Data > Jenis  Ujian',
+      'content' => 'admin/ref_jenis_ujian',
       'breadcrumb' => array(
         'Home' => base_url(),
       ),

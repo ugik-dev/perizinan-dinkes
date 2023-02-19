@@ -78,6 +78,7 @@ class Sertifikat extends CI_Controller
             $pdf->SetTextColor(255, 192, 203);
             $pdf->RotatedText(35, 190, 'D I T O L A K', 30);
             $pdf->RotatedText(35, 300, 'D I T O L A K', 30);
+        } else if (!empty($data['sign_kadin'])) {
         } else {
             $pdf->SetFont('Arial', 'B', 90);
             $pdf->SetTextColor(255, 192, 203);

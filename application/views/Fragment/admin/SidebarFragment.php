@@ -17,11 +17,23 @@
         <li id="bank_soal">
           <a href="<?= site_url('AdminController/BankSoal') ?>"><i class="fa fa-note-sticky"></i><span class="nav-label">Bank Soal</span></a>
         </li>
-        <li id="open_session">
+        <li id="jadwal_ujian">
           <a href="<?= site_url('AdminController/jadwal_ujian') ?>"><i class="far fa-user-graduate"></i><span class="nav-label">Jadwal Ujian</span></a>
         </li>
-        <li id="passing_grade">
-          <a href="<?= site_url('AdminController/passing_grade') ?>"><i class="far fa-user-graduate"></i><span class="nav-label">Passing Grade</span></a>
+
+        <li id="setting_parm">
+          <a href="#"><i class="fa fa-tasks"></i> <span class="nav-label">Master Data</span> <span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level" aria-expanded="true">
+            <li id="ref_jenis_ujian">
+              <a href="<?= site_url('AdminController/ref_jenis_ujian') ?>"><i class="fa fa-balance-scale"></i> <span class="nav-label"> Jenis Ujian</span></a>
+            </li>
+            <li id="ref_peraturan">
+              <a href="<?= site_url('AdminController/ref_peraturan') ?>"><i class="fa fa-archive"></i> <span class="nav-label"> Peraturan</span></a>
+            </li>
+            <li id="ref_sktim">
+              <a href="<?= site_url('AdminController/ref_sktim') ?>"><i class="fa fa-link"></i> <span class="nav-label">SK TIM</span></a>
+            </li>
+          </ul>
         </li>
         <!-- </li> -->
         <!-- <li id="search">
@@ -30,7 +42,7 @@
         <li id="logout">
           <a href="<?= site_url('AdminController') ?>" class="logout"><i class="fa fa-sign-out"></i> <span class="nav-label">Logout</span></a>
         </li>
-        </li>
+        <!-- </li> -->
       </ul>
     </div>
   </nav>

@@ -4,13 +4,13 @@
       <form class="form-inline" id="toolbar_form" onsubmit="return false;">
         <input type="hidden" placeholder="" class="form-control" id="id_role" name="id_role" value="3">
         <input type="text" placeholder="Nama / NIK" class="form-control my-1 mr-sm-2" id="search" name="search">
-        <select class="form-control my-1 mr-sm-2" id="status_data" name="status_data">
+        <!-- <select class="form-control my-1 mr-sm-2" id="status_data" name="status_data">
           <option value="">-- Semua Status --</option>
           <option value="0">Belum input data</option>
           <option value="1">Menunggu verifikasi</option>
           <option value="3">Ditolak</option>
           <option value="2">Diterima</option>
-        </select>
+        </select> -->
         <button type="submit" class="btn btn-success my-1 mr-sm-2" id="show_btn" data-loading-text="Loading..." onclick="this.form.target='show'"><i class="fal fa-search"></i> Cari</button>
         <button type="submit" class="btn btn-primary my-1 mr-sm-2" id="add_btn" data-loading-text="Loading..." onclick="this.form.target='add'"><i class="fal fa-plus"></i> Tambah</button>
       </form>
@@ -26,9 +26,9 @@
               <thead>
                 <tr>
 
-                  <th style="width: 15%; text-align:center!important">Username</th>
+                  <th style="width: 15%; text-align:center!important">NIK / Username</th>
                   <th style="width: 12%; text-align:center!important">Nama</th>
-                  <th style="width: 12%; text-align:center!important">Masuk</th>
+                  <th style="width: 12%; text-align:center!important">Alamat</th>
                   <th style="width: 7%; text-align:center!important">Action</th>
                 </tr>
               </thead>
@@ -277,7 +277,7 @@
            </div>
         </div>
       `;
-        renderData.push([user['username'], user['nama'], statusData(user['status_data']), button]);
+        renderData.push([user['username'], user['nama'], user['alamat'], button]);
       });
       FDataTable.clear().rows.add(renderData).draw('full-hold');
     }

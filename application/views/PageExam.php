@@ -34,7 +34,7 @@ $this->load->view('Fragment/HeaderFragment', ['title' => $title]);
                                </strong> <br><br>';
                             shuffle($ds['opsi']);
                             foreach ($ds['opsi'] as $ops) {
-                                if (strval($ops['token_opsi']) == strval($ans[$i])) {
+                                if (strcmp($ops['token_opsi'], $ans[$i]) == 0) {
                                     $checked = 'checked';
                                 } else
                                     $checked = '';

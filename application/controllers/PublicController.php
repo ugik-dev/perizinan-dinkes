@@ -90,69 +90,7 @@ class PublicController extends CI_Controller
       }
     }
   }
-  public function test_email()
-  {
-    $send['to'] = "ugik.dev@gmail.com";
-    $send['subject'] = 'Aktifasi Sistem Perizinan';
-    // $url_act = site_url("/activator/{$data['id']}/{$data['activator']}");
-    // $content = "<br><br> Username :  {$data['username']}
-    // 				<br> Password :  {$data['password_hash']}
-    // 				<br> Activator :  {$data['activator']}
-    // 				<br> 
-    // 				<br><a href='{$url_act}' target='_blank' style='text-decoration:none;color: #60d2ff;'>Click this to activate</a>
 
-    // 				<br> manual activate = {$url_act}";
-
-    // $content = "<h4>Selamat datang di sistem pendaftaran dan ujian masuk Politeknik Manufaktur Bangka Belitung
-    // </h4><br><br>Email anda telah berhasil didaftarkan.
-    //                                         <br><br> Username : {$data['username']}
-    //                                         <br> Password : {$data['password_hash']}
-    //                                         <br> Activator : {$data['activator']}
-    //                                         <br>
-    //                                         <br> Untuk login harap melakukan aktivasi email terlebih dahulu dengan klik tombol aktifasi dibawah.";
-    // $content2 = "<a href='{$url_act}' target='_blank' class='btn-primary' style='text-decoration: none;color: #fff;background-color: #1ab394;border: solid #1ab394;border-width: 5px 10px;line-height: 2;font-weight: bold;text-align: center;cursor: pointer;display: inline-block;border-radius: 5px; text-transform: capitalize;'>Aktifkan sekarang</a>
-    //                                         <br> atau masuk kealamat {$url_act} ";
-    // $send['message'] = $this->template_email($send['subject'], $content, $content2);
-    $send['message'] = "test";
-
-    // $config['smtp_host']    = $serv['url_'];
-    // $config['charset']    = 'iso-8859-1';
-    // $config['smtp_crypto']    = 'ssl';
-    //  '' => 'ssl'
-    $config['protocol']    = 'smtp';
-    $config['smtp_host']    = "mail.dinkes.bangka.go.id";
-    $config['smtp_port']    = 587;
-    $config['smtp_timeout'] = '20';
-    $config['smtp_user']    = "do-not-reply@dinkes.bangka.go.id";    //Important
-    $config['smtp_pass']    = "Ea5QYW{bY(Tt";  //Important
-    $config['charset']    = 'utf-8';
-    $config['newline']    = '\r\n';
-    $config['smtp_crypto']    = 'tls';
-    $config['mailtype'] = 'text'; // or html
-    $config['validation'] = TRUE; // bool whether to validate email or not 
-    $send['config'] = $config;
-    // $this->load->libraries('email');
-    $this->email->initialize($send['config']);
-    $this->email->set_mailtype("html");
-    $this->email->from($config['smtp_user']);
-    $this->email->to($send['to']);
-    $this->email->subject($send['subject']);
-    $this->email->message($send['message']);
-    $this->email->send();
-    // var_dump($this->email->print_debugger());
-
-    // ini_set('display_errors', 1);
-    // error_reporting(E_ALL);
-    // $from = $serv['username'];
-    // $to = "ugik.dev@gmail.com";
-    // $subject = "Checking PHP mail";
-    // $message = "PHP mail berjalan dengan baik";
-    // $headers = "From:" . $from;
-    // mail($to, $subject, $message, $headers);
-    echo "Pesan email sudah terkirim.";
-    // die();
-    return 0;
-  }
 
 
   public function email_send($data, $action)
